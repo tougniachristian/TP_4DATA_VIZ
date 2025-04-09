@@ -1,0 +1,55 @@
+Analyse des Données de Diabète
+
+Ce projet contient des scripts pour analyser des données de diabète et visualiser les résultats à travers des diagrammes interactifs à l'aide de Plotly et Matplotlib.
+
+Fonctionnalités
+
+Diagramme de Pareto – Un graphique qui montre les variables les plus influentes chez les patients diabétiques.
+Diagramme de Sankey – Visualisation des flux entre les groupes d'âge, les niveaux de glucose, et les résultats diabétiques.
+Sunburst Chart – Un graphique de type sunburst pour visualiser la répartition des groupes d'âge, des niveaux de glucose et des résultats de diabète.
+Prérequis
+
+Assurez-vous d'avoir installé les bibliothèques nécessaires pour exécuter les scripts :
+
+pip install pandas plotly seaborn matplotlib
+Description des fonctions
+
+1. Diagramme de Pareto
+Cette fonction génère un diagramme de Pareto pour les facteurs influençant les patients diabétiques.
+
+Fonction principale : generer_pareto_diabetiques(data)
+
+Paramètres :
+
+data: Un DataFrame Pandas contenant les données des patients, avec des colonnes comme Pregnancies, Glucose, BloodPressure, etc.
+Étapes :
+
+Filtrage des données pour ne conserver que les patients diabétiques.
+Calcul des moyennes pour différentes variables quantitatives.
+Affichage d'un diagramme de Pareto montrant les moyennes et les pourcentages cumulatifs.
+2. Diagramme de Sankey
+Cette fonction génère un diagramme de Sankey pour illustrer les flux entre les groupes d'âge, les niveaux de glucose et les résultats de diabète.
+
+Fonction principale : generer_sankey_diabete(data)
+
+Paramètres :
+
+data: Un DataFrame Pandas contenant les données des patients, avec des colonnes comme AgeGroup, GlucoseLevel, Outcome.
+Étapes :
+
+Filtrage des données en fonction des groupes d'âge et des niveaux de glucose.
+Construction des liens de Sankey entre AgeGroup, GlucoseLevel, et OutcomeLabel.
+Affichage du diagramme de Sankey.
+3. Sunburst Chart
+Cette fonction génère un graphique de type sunburst pour visualiser la distribution des patients en fonction de leur groupe d'âge, niveau de glucose et statut diabétique.
+
+Fonction principale : generer_sunburst_diabete(data)
+
+Paramètres :
+
+data: Un DataFrame Pandas contenant les données des patients avec des colonnes comme AgeGroup, GlucoseLevel, Outcome.
+Étapes :
+
+Filtrage des données pour ne conserver que les patients dans les groupes d'âge et les niveaux de glucose spécifiés.
+Création d'un graphique sunburst basé sur AgeGroup, GlucoseLevel, et OutcomeLabel.
+Affichage du graphique interactif.
